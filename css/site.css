@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #1d5888;
-  --secondary-color: #ff993b;
-  --dark-color: #292929;
+  --primary-color: #292929;
+  --secondary-color: #fc6900;
+  --dark-color: #291f4b;
   --white-color: #e7e7e7;
 }
 
 .logoFont {
-  font-family: "Racing Sans One", cursive;
+  font-family: "Caveat Brush", cursive;
 }
 
 body {
@@ -15,6 +15,17 @@ body {
 
 nav {
   background-color: var(--dark-color);
+}
+
+#btnSubmit {
+  background-color: var(--secondary-color) !important;
+}
+
+#alert {
+  color: var(--white-color);
+  background-color: var(--dark-color);
+  opacity: 0.75;
+  border-radius: 1rem;
 }
 
 footer {

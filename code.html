@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
-    <title>App Name: A Coding Project by Nebojsa</title>
+    <title>FLIP: a Coding Project by Nebojsa</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -17,11 +17,11 @@
       crossorigin="anonymous"
     />
 
-    <!-- Google Fonts Racing Sans One -->
+    <!-- Google Fonts Caveat Brush -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap"
       rel="stylesheet"
     />
 
@@ -45,7 +45,7 @@
             height="24"
             alt="Nebojsa Logo"
           />
-          APP NAME</a
+          FLIP</a
         >
         <button
           class="navbar-toggler"
@@ -72,7 +72,12 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">GitHub Repo</a>
+              <a
+                class="nav-link"
+                href="https://github.com/nradojcic/Flip"
+                target="_blank"
+                >GitHub Repo</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://nebojsa.ca" target="_blank"
@@ -88,26 +93,101 @@
     <main class="flex-shrink-0">
       <div class="container py-5 px-5 mt-5">
         <h2 class="border-1 border-bottom border-dark">
-          The Code for <span class="logoFont">APP NAME</span>
+          The Code for <span class="logoFont">FLIP</span>
         </h2>
         <div class="row row-cols-1 row-cols-lg-2">
           <!-- Left - Prism Code - paste your code between <code> tags -->
           <div class="col-lg-8">
             <pre class="line-numbers"><code class="language-javascript">
-                // Call Hello World
-                function HelloWorld() {
-                    alert("Hello World");
+                // get a string from the page
+                // Controller funcyion
+                function getValue() {
+                  
+                  // hide the alert box at the beginning of the program
+                  document.getElementById("alert").classList.add("invisible");
+
+                  let userString = document.getElementById("userString").value;
+
+                  let revString = reverseString(userString);
+
+                  displayString(revString);
+                }
+
+                // reverse the string
+                // Logic function
+                function reverseString(userString) {
+                  let revString = [];
+
+                  // reverse the string using a for loop, backwards
+                  for (let i = userString.length - 1; i >= 0; i--) {
+                    
+                    revString += userString[i];
+                  
+                  }
+
+                  return revString;
+                }
+
+                // display the reversed string on the page
+                // View function
+                function displayString(revString) {
+                  
+                  // write to the page
+                  document.getElementById("msg").innerHTML = 
+                    `Your string reversed is: &lt;strong>${revString}&lt;/strong>`;
+
+                  // show the alert box
+                  document.getElementById("alert").classList.remove("invisible");
                 }
                 </code>
             </pre>
           </div>
           <!-- Right - Code Description -->
           <div class="col-lg-4">
-            <p>The Code is structured in one function.</p>
-            <h5>Hello World</h5>
+            <p class="mt-3">
+              The Code is structured in <strong>three functions</strong>.
+            </p>
+            <h5 class="mt-4">1) <strong>getValue</strong> function</h5>
             <p>
-              Hello World is a function that displays an allert with a message
-              of "Hello World"
+              Function <strong>getValue</strong> is the Controller function. It
+              is triggered by an onClick event connected to a button on the App
+              page.
+            </p>
+            <p>
+              It first makes sure the alert display box is hidden, by adding the
+              <strong>invisible</strong> CSS class to it.
+            </p>
+            It then collects text from the input field on the page, and routes
+            the request to other functions.
+            <p>
+              Then it calls <strong>reverseString</strong> function to reverse
+              the collected string, and then the
+              <strong>displayString</strong> function to show the alert box and
+              display the reversed string.
+            </p>
+            <h5 class="mt-5">2) <strong>reverseString</strong> function</h5>
+            <p>
+              Function <strong>reverseString</strong> is the Logic function. It
+              reverses the user's string.
+            </p>
+            <p>
+              It accepts <strong>userString</strong> as the argument, and then
+              runs a <strong>FOR loop BACKWARDS</strong> from the end towards
+              the beginning of the string, adding values one by one to
+              <strong>revString</strong> string. The function then returns the
+              string.
+            </p>
+            <h5 class="mt-5">3) <strong>displayString</strong> function</h5>
+            <p>
+              Function <strong>displayString</strong> is the View function. It
+              displays the reversed string on the web page.
+            </p>
+            <p>
+              It accepts a string as the argument. And then uses template string
+              to format the output sentence inserting in it
+              <strong>revString</strong> value. It then shows the message on the
+              screen by removing <strong>invisible</strong> CSS class from the
+              alert box that was made hidden at the beginning of the program.
             </p>
           </div>
         </div>
@@ -159,7 +239,7 @@
                   ><i class="fab fa-github fa-2x"></i
                 ></a>
               </div>
-              <div class="col social">
+              <!-- <div class="col social">
                 <a href="#" target="_blank"
                   ><i class="fab fa-twitter fa-2x"></i
                 ></a>
@@ -168,7 +248,7 @@
                 <a href="#" target="_blank"
                   ><i class="fab fa-youtube fa-2x"></i
                 ></a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
